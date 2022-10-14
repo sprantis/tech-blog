@@ -13,11 +13,12 @@
 
 ## Description
 I created a CMS-style Tech Blog site where developers can publich their blog posts and comment on other developers' posts as well. This app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sqeualize as the ORM, and the express-session npm package for authentication.
+
 ## Installation Instructions
 Install Node.js before using this application.
 
 ## Usage Information
-Deployed Link:[]
+Deployed Link:[https://sjp-tech-blog.herokuapp.com/]
 
 ## License
 [MIT](https://opensource.org/licenses/MIT)
