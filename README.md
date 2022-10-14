@@ -12,7 +12,9 @@
 * [Questions](#questions)
 
 ## Description
-I created a CMS-style Tech Blog site where developers can publich their blog posts and comment on other developers' posts as well. This app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sqeualize as the ORM, and the express-session npm package for authentication.
+I created a CMS-style Tech Blog site where developers can publich their blog posts and comment on other developers' posts as well. This app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sqeualize as the ORM, and the express-session npm package for authentication. 
+
+After 5 minutes, the application will automatically sign users out, but they can still view posts and comments.
 
 ## Installation Instructions
 Install Node.js before using this application.
