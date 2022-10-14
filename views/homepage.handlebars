@@ -1,0 +1,8 @@
+{{!-- Code referenced from Module 14 - Mini Project --}}
+
+<!-- Loop over each object in the posts array -->
+{{#each posts as |post|}}
+    <a href="/post/{{post.id}}">{{post.postTitle}}</a>
+    <div>Posted by {{post.user.username}} on {{formatDate dateCreated}}</div>
+    <p>{{post.postContent}}</p>
+{{/each}}
