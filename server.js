@@ -4,7 +4,7 @@
 // THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 
 // Notes: 
-// users are generated asyncronously from the seed, so username1 does not = userid1
+// Users are generated asyncronously from the seed, so username1 does not = userid1
 
 // Code referenced from Module 14 - Mini Project
 

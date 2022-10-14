@@ -1,24 +1,39 @@
 {{!-- Code referenced from Module 14 - Mini Project --}}
 
 {{!-- Single Post --}}
-<div>{{postTitle}}</div>
-<div>Posted by {{user.username}}  on {{formatDate dateCreated}}</div>
-<p>{{postContent}}</p>
-
-{{!-- Form to add new comments --}}
-{{#if loggedIn}}
 <div>
-    <form id="add-comment-form">
-        <label>Comment</label>
-        <textarea name="comment-text"></textarea>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="card">
+        <div class="card-header flex-row justify-space-between">
+            <h4>{{postTitle}}</h4>
+            <h6>Posted by {{user.username}}  on {{formatDate dateCreated}}</h6>
+        </div>
+        <div class="card-body">
+            <p>{{postContent}}</p>
+        </div>
+    </div>
+
+    {{!-- Form to add new comments --}}
+    {{#if loggedIn}}
+    <div>
+        <form id="add-comment-form">
+            <label class="form-label">Add a comment</label>
+            <textarea class="form-textarea" name="comment-text"></textarea>
+            <div class="mt-4">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    {{/if}}
+
+    {{!-- Existing Comments --}}
+    <div class="mt-4">
+        <h6>Comments:</h6>
+        <div>{{> comments comments}}</div>
+
+        {{#if loggedIn}}
+        <script src="/js/addComment.js"></script>
+        {{/if}}
+    </div> 
+
 </div>
-{{/if}}
 
-{{!-- Existing Comments --}} 
-<div>{{> comments comments}}</div>
-
-{{#if loggedIn}}
-<script src="/js/addComment.js"></script>
-{{/if}}
