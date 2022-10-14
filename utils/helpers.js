@@ -1,12 +1,11 @@
 // Code referenced from Module 14 - Mini Project
 
 module.exports = {
-    formatTime: (date) => {
+    formatDate: (date) => {
         // Format date as MM/DD/YYYY
-        return date.toLocaleDateString();
-    },
-    formatTime: (time) => {
-        // Format time
-        return time.toLocalTimeString();
+        // return date.toLocalDateString();
+        return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${
+            new Date(date).getFullYear()
+        }`;
     }
 };

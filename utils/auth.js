@@ -1,9 +1,9 @@
 // Code referenced from Module 14 - Mini Project
 
 const auth = (req, res, next) => {
-    // If the user is not logged in, redirect the request to the login route
+    // If the user is not logged in, redirect the request to the signin route
     if (!req.session.loggedIn) {
-        res.redirect('/login');
+        res.redirect('/signin');
     } else {
         next();
     }
