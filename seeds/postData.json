@@ -1,14 +1,17 @@
 [
   {
-    "username": "usernameTest1",
-    "password": "passwordTest1"
+    "userId": 1,
+    "postTitle": "Title Test 1",
+    "postContent": "Text test 1"
   },
   {
-    "username": "usernameTest2",
-    "password": "passwordTest2"
+    "userId": 2,
+    "postTitle": "Title Test 2",
+    "postContent": "Text test 2"
   },
   {
-    "username": "usernameTest3",
-    "password": "passwordTest3"
+    "userId": 3,
+    "postTitle": "Title Test 3",
+    "postContent": "Text test 3"
   }
 ]
