@@ -20,6 +20,8 @@ Install Node.js before using this application.
 ## Usage Information
 Deployed Link:[https://sjp-tech-blog.herokuapp.com/]
 
+![Tech Blog Screenshot](./public/assets/images/tech-blog-screenshot.png)
+
 ## License
 [MIT](https://opensource.org/licenses/MIT)
 
