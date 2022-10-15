@@ -2,6 +2,9 @@
 
 {{!-- Single Post --}}
 <div>
+    {{!-- <div>{{comments.[4].userId}}</div> --}}
+    {{!-- NOT WORKING --}}
+    {{!-- <div>{{session.currUserId}}</div> --}}
     <div class="card">
         <div class="card-header flex-row justify-space-between">
             <h4>{{postTitle}}</h4>
@@ -28,7 +31,10 @@
     {{!-- Existing Comments --}}
     <div class="mt-4">
         <h6>Comments:</h6>
-        <div>{{> comments comments}}</div>
+        {{!-- Not sure where 'comments' is coming from, but it HAS to stay here! --}}
+        {{#each comments as |comment|}}
+            {{> comment}}
+        {{/each}}
 
         {{#if loggedIn}}
         <script src="/js/addComment.js"></script>

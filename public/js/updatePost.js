@@ -20,13 +20,11 @@ const updatePostFormHandler = async function(event) {
     });
 
     if (response.ok) {
-        console.log(postId);
         document.location.replace('/dashboard');
     } else {
         alert(response.statusText);
+        document.location.replace('/dashboard');
     }
-    
-    document.location.replace('/dashboard');
 }
 
 document.querySelector('#update-post-form').addEventListener('submit', updatePostFormHandler);

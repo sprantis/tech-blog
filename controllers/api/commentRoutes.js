@@ -7,16 +7,18 @@ const auth = require ('../../utils/auth');
 router.get('/', async (req, res) => {
     try {
         const commentData = await Comment.findAll({
-            include: [{ model: User }]
+            attributes: ['id', 'commentText', 'dateCreated'],
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                }
+            ]
         });
 
-        // Serialize user data so templates can read it
-        const comments = commentData.map((comment) => comment.get({ plain: true }));
-
-        // Pass serialized data into Handlebars.js template
-        res.render('post', { comments, loggedIn: req.session.loggedIn });
+        res.status(200).json(commentData);
     } catch (err) {
-        res.status(400).json(err);
+        res.status(500).json(err);
     }
 });
 
@@ -36,7 +38,7 @@ async (req, res) => {
     // Grab userId from active session when posting a new comment
     try {
         const commentData = await Comment.create({
-            userId: req.session.userId,
+            userId: req.session.currUserId,
             postId: req.body.postId,
             commentText: req.body.commentText
         });

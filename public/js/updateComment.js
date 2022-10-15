@@ -5,27 +5,27 @@
 const updateCommentFormHandler = async (event) => {
     event.preventDefault();
 
-    const commentId = event.target.getAttribute('data-id');
+    const commentId = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+    ];
 
     const commentText = document.querySelector('textarea[name="comment-text"]').value.trim();
 
-    if (commentText) {
-        const response = await fetch(`/api/comments${commentId}`, {
-            method: 'PUT',
-            body: JSON.stringify({
-                postId,
-                commentText
-            }),
-            headers: { 'Content-Type': 'application/json' }
-        });
+    const response = await fetch(`/api/comments/${commentId}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            commentText
+        }),
+        headers: { 'Content-Type': 'application/json' }
+    });
 
-        if (response.ok) {
-            document.location.reload();
-        } else {
-            alert(response.statusText);
-        }
-    };
+    if (response.ok) {
+        document.location.replace('/dashboard');
+    } else {
+        alert(response.statusText);
+        document.location.replace('/dashboard');
+    }
 }
 
-// document.querySelector('#update-comment-form').addEventListener('submit', updateCommentFormHandler);
+document.querySelector('#update-comment-form').addEventListener('submit', updateCommentFormHandler);
 

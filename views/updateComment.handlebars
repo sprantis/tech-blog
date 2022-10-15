@@ -1,0 +1,16 @@
+<div>
+    <h2>Update Comment</h2>
+    <form id="update-comment-form">
+        <label class="form-label" for="comment-text">Comment Text</label>
+        <textarea class="form-textarea" name="comment-text">{{comment.commentText}}</textarea>
+        <div class="mt-4">
+            <button class="btn btn-primary" type="submit">Update Comment</button>
+        </div>
+    </form>
+    <div class="mt-4">
+        <button type="click" class="btn btn-danger" id="delete-comment-btn">Delete Comment</button>
+    </div>
+
+    <script src="/js/updateComment.js"></script>
+    <script src="/js/deleteComment.js"></script>
+</div>

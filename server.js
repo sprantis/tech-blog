@@ -3,6 +3,8 @@
 // WHEN I am idle on the site for more than a set time
 // THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 
+// Ensure that page reloads if alert comes in when user is auto signed out
+
 // Notes: 
 // Users are generated asyncronously from the seed, so username1 does not = userid1
 
@@ -41,6 +43,13 @@ const sess = {
 };
 
 app.use(session(sess));
+// Get access to session variable from handlebars templates: https://stackoverflow.com/questions/44883228/how-to-get-the-express-session-variable-in-all-the-handlebars-pages-right-now-i
+// works but is unusable right now
+// app.use(function (req, res, next) {
+//     res.locals.session = req.session;
+//     next();
+// })
+
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);

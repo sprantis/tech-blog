@@ -67,7 +67,7 @@ router.post('/', auth, async (req, res) => {
     // Grab userId from active session when adding a new post
     try {
         const postData = await Post.create({
-            userId: req.session.userId,
+            userId: req.session.currUserId,
             postTitle: req.body.postTitle,
             postContent: req.body.postContent
         });
@@ -88,7 +88,7 @@ router.put('/:id', auth, async (req, res) => {
             { where: 
                 { 
                     id: req.params.id,
-                    userId: req.session.userId 
+                    userId: req.session.currUserId 
                 } 
             }
         );
@@ -109,7 +109,7 @@ router.delete('/:id', auth, async (req, res) => {
         const postData = await Post.destroy({
             where: { 
                 id: req.params.id,
-                userId: req.session.userId 
+                userId: req.session.currUserId 
             }
         });
 

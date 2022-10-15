@@ -3,12 +3,33 @@
 <div>
     <div class="flex-row justify-space-between mb-4">
         <h3>Your Posts</h3>
-        <a href="/dashboard/new"><button class="btn btn-primary">Add New Post</button></a>
+        <a href="/dashboard/newPost"><button class="btn btn-primary">Add New Post</button></a>
     </div>
     {{#if posts.length}}
         {{#each posts as |post|}}
         <h5 class="mb-4">
-            <a href="/dashboard/edit/{{post.id}}">{{post.postTitle}}</a>
+            <a href="/dashboard/updatePost/{{post.id}}">{{post.postTitle}}</a>
+        </h5>
+        {{/each}}
+    {{else}}
+        <p>You have no posts.</p>
+    {{/if}}
+
+    <div class="flex-row justify-space-between mb-4">
+        <h3>Your Comments</h3>
+    </div>
+    {{#if comments.length}}
+        {{#each comments as |comment|}}
+        <h5 class="mb-4">
+            <div class="flex-row">
+                <p class="mr-4">"{{comment.commentText}}" on <a href="/post/{{postId}}"><em>this post</em></a>. </p>
+                <a href="/dashboard/updateComment/{{comment.id}}">
+                    <button class="btn btn-primary">Update Comment</button> 
+                </a>
+            </div>
+
+
+
         </h5>
         {{/each}}
     {{else}}
